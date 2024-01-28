@@ -5,6 +5,8 @@ import {
   SHORT_BREAK,
   SLOW_TICKING,
   DIGITAL_SOUND,
+  NO_SOUND,
+  D1,D2,D3,D4,D5
 } from "../constants";
 
 const initialState = {
@@ -13,10 +15,10 @@ const initialState = {
   autoBreaks: false,
   autoPomodoros: false,
   longBreakInterval: 4,
-  alarmSound: DIGITAL_SOUND,
+  alarmSound: D1,
   alarmVolume: 50,
   alarmRepeat: 1,
-  tickingSound: SLOW_TICKING,
+  tickingSound: NO_SOUND,
   tickingVolume: 50,
   modes: {
     [POMODORO]: {

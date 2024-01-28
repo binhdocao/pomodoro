@@ -25,16 +25,37 @@ import {
   FAST_TICKING,
   NO_SOUND,
   SLOW_TICKING,
+  D1,D2,D3,D4,D5
 } from "../constants";
 
 const alarmSounds = [
+  // {
+  //   value: BELL_SOUND,
+  //   label: "Bell",
+  // },
+  // {
+  //   value: DIGITAL_SOUND,
+  //   label: "Digital",
+  // },
   {
-    value: BELL_SOUND,
-    label: "Bell",
+    value: D1,
+    label: "Davis 1",
   },
   {
-    value: DIGITAL_SOUND,
-    label: "Digital",
+    value: D2,
+    label: "Davis 2",
+  },
+  {
+    value: D3,
+    label: "Davis 3",
+  },
+  {
+    value: D4,
+    label: "Davis 4",
+  },
+  {
+    value: D5,
+    label: "Davis 5"
   },
 ];
 
@@ -92,6 +113,11 @@ export default function Settings() {
     tickingVolume,
   } = useSelector((state) => state.timer);
   const dispatch = useDispatch();
+  const playSound = (sound) => {
+    const audio = new Audio(sound);
+    audio.play();
+  };
+
 
   return (
     <Modal>
@@ -149,7 +175,10 @@ export default function Settings() {
                 <Select
                   value={alarmSound}
                   items={alarmSounds}
-                  onChange={(val) => dispatch(setAlarmSound(val))}
+                  onChange={(val) => {
+                    dispatch(setAlarmSound(val));
+                    playSound(val); // Play the sound when a new alarm sound is selected
+                  }}
                 />
               </Row>
               <Row right margin>

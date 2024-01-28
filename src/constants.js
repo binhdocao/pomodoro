@@ -15,6 +15,12 @@ const FAST_TICKING = "sounds/ticking-fast.mp3";
 const SLOW_TICKING = "sounds/ticking-slow.mp3";
 const NO_SOUND = "none";
 
+const D1 = "sounds/D1.mp3";
+const D2 = "sounds/D2.mp3";
+const D3 = "sounds/D3.mp3";
+const D4 = "sounds/D4.mp3";
+const D5 = "sounds/D5.mp3";
+
 export {
   POMODORO,
   SHORT_BREAK,
@@ -30,4 +36,5 @@ export {
   SLOW_TICKING,
   FAST_TICKING,
   NO_SOUND,
+  D1,D2,D3,D4,D5
 };
