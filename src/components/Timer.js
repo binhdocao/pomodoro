@@ -133,7 +133,29 @@ export default function Timer() {
   useEffect(() => {
     alarmAudio.setVolume(alarmVolume);
   }, [alarmVolume]);
-
+  
+    // Save timer state to localStorage when timer starts or stops
+    useEffect(() => {
+      const timerState = {
+        ticking,
+        timeLeft,
+        mode,
+        round,
+        // Add any other relevant state variables here
+      };
+      localStorage.setItem("timerState", JSON.stringify(timerState));
+    }, [ticking, timeLeft, mode, round]);
+  
+    // Load timer state from localStorage when component mounts
+    useEffect(() => {
+      const savedState = localStorage.getItem("timerState");
+      if (savedState) {
+        const { ticking, timeLeft, mode, round } = JSON.parse(savedState);
+        // Use these values to set the initial state of the timer
+        // This might involve dispatching Redux actions or setting local component state
+      }
+    }, []);
+    
   const next = useCallback(() => {
     switch (mode) {
       case LONG_BREAK:

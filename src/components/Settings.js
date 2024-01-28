@@ -127,7 +127,7 @@ export default function Settings() {
               />
             </Item>
             <Item>
-              <Label>Auto start Pomodoros?</Label>
+              <Label>Auto start Binhodoro?</Label>
               <Switch
                 on={autoPomodoros}
                 onClick={() => dispatch(toggleAutoPomodoros())}

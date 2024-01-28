@@ -1,4 +1,4 @@
-const POMODORO = "pomodoro";
+const POMODORO = "Binhodoro";
 const SHORT_BREAK = "short_break";
 const LONG_BREAK = "long_break";
 const PAUSED = "paused";
